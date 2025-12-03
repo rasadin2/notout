@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(php -v:*)",
+      "Bash(mysql:*)",
+      "Bash(curl:*)",
+      "WebFetch(domain:api.wordpress.org)",
+      "Bash(/c/xampp/mysql/bin/mysql:*)",
+      "Bash(find:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
