@@ -8,14 +8,18 @@
 .navbar-toggler {
     border: 1px solid rgba(0,0,0,0.09);
 }
+header .container {
+    max-width: 1400px;
+}
 .notout-navbar {
     position: relative;
     width: 100%;
     z-index: 10000;
     display: flex;
     align-items: center;
-    min-height: 60px;
-    background: #f1f1f1;
+    min-height:100px;
+    background: #014629;
+	background: transparent;
 }
 .notout-menu-wrap {
     width: 100%;
@@ -44,6 +48,11 @@
 .notout-main-menu li a {
     display: block;
     padding: 20px 15px;
+	color:#ffffff;
+	text-decoration: none;
+}
+.notout-main-menu li a:hover{
+	color:#f0f812;
 }
 .notout-main-menu li > .sub-menu {
     display: none;
@@ -87,7 +96,7 @@
     display: none !important;
 }
 .fixed-to-top {
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     z-index: 100000;
@@ -332,3 +341,284 @@ and (max-width: 1080px) {
         visibility: hidden;
     }
 }
+.bottom-footer .container {
+        max-width: 1400px;
+		padding: 0 0px;
+    }
+.bottom-footer{
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#023821+0,016334+100 */
+    background: linear-gradient(135deg,  #023821 0%,#016334 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    min-height: 450px;
+    padding: 100px 30px 18px;
+   }
+.bottom-footer h4{
+	color:#ffffff;
+	margin: 0px 0 12px 0;
+}
+.bottom-footer ul{
+	margin:0;
+	padding:0;
+}
+.bottom-footer ul li{
+	list-style-type:none;
+}
+.bottom-footer ul li a{
+	color:#ffffff;
+	font-size: 15px;
+}
+.footer-copy-right{
+	text-align:center;
+}
+.bottom-footer a,
+.bottom-footer p,
+.footer-copy-right p{
+	color:#ffffff;
+	font-size: 15px;
+}
+
+.first-bottom{
+	margin-bottom: 55px;
+    border-bottom: 1px solid #02703d;
+    padding-bottom: 36px !important;
+}
+
+.brand-description {
+            color: #b8d4d4;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        .subscribe-section {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .subscribe-section h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+			color: #ffffff;
+			margin: 0;
+            padding: 0;
+        }
+
+        .subscribe-section p {
+            color: #b8d4d4;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .subscribe-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .subscribe-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 8px;
+            color: #fff !important;
+            background: rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+			outline:0;
+        }
+
+        .subscribe-form input::placeholder {
+            color: #b8d4d4;
+        }
+
+        .subscribe-form button {
+            padding: 15px 25px;
+            background:#04B21B;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+			outline:0;
+        }
+
+        .subscribe-form button:hover {
+            background: #e6d43d;
+            transform: translateX(3px);
+        }
+.subscribe-form input {
+    flex: 1;
+    padding: 15px 20px !important;
+    border: none;
+    border-radius: 8px !important;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 14px;
+	border:0px !important;
+}
+.footer .widget-title{
+	margin:0;
+	padding:0;
+}
+.foo-colume-1 .widget-title{
+	 color:#f0f812;
+}
+.logo-content{
+	max-width:400px;
+}
+.foo-colume-2 {
+    webkit-box-flex: 0;
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+.foo-colume-5 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 20.666667%;
+    flex: 0 0 21.666667%;
+    max-width: 21.666667%;
+}
+.foo-colume-5 p{
+	margin-bottom:15px;
+}
+.foo-colume-5 .widget {
+    margin: 0 0 0;
+}
+.footer h4,
+.footer .widget-title {
+    font-size: 19px;
+}
+.top-banner-bg{
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#023821+0,016334+100 */
+background: linear-gradient(to bottom,  #023821 0%,#016334 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.tob-banner-title span{
+	color:#f0f812;
+}
+.view-button a{
+	text-decoration:none !important;
+}
+
+/*animation start*/
+.animation-container {
+   flex: 1;
+   display: flex;
+   align-items: center;
+   position: relative;
+   width: 100%;
+   overflow:hidden;
+ }
+
+.cricket-text {
+  font-size: 455px;
+  font-weight: bold;
+      color: #176c46;
+  text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+   white-space: nowrap;
+  position: relative;
+	opacity:0.10;
+  text-transform:uppercase;
+  line-height:380px;
+}
+
+.left-to-right {
+    animation: slideLeftToRight 30s linear infinite;
+ }
+.right-to-left {
+   animation: slideRightToLeft 30s linear infinite;
+ }
+
+@keyframes slideLeftToRight {
+            0% {
+                transform: translateX(-100vw);
+            }
+            100% {
+                transform: translateX(100vw);
+            }
+        }
+
+        @keyframes slideRightToLeft {
+            0% {
+                transform: translateX(100vw);
+            }
+            100% {
+                transform: translateX(-100vw);
+            }
+        }
+
+/*animation end*/
+.know-list-content ul{
+	margin:0;
+	padding:0;
+}
+.know-list-content ul li{
+	list-style-type:none;
+	position:relative;
+	color:#696969;
+	padding-left: 27px;
+	font-size:18px;
+}
+.know-list-content ul li:before{
+	content:'';
+	background: url(../img/checkbox.png) no-repeat center;
+	width:16px;
+	height:17px;
+	top:5px;
+	left:0;
+	position: absolute;
+}
+
+
+/*scroll animation start logo*/
+.scroll-wrapper {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            position: relative;
+            width: 100%;
+			
+        }
+.scroll-full-section,
+.logo-scroll{
+	overflow:hidden;
+}
+.logo-box {
+     display: flex;
+    gap: 0 136px;
+    align-items: center;
+}
+.scroll-wrapper .box-item span {
+    color: #35cc6c;
+}
+.second-scroll-box .box-item span {
+    color: #ffffff;
+    text-shadow: 2px 2px 0 #35cc6c, -2px 2px 0 #35cc6c, -2px -2px 0 #35cc6c, 2px -2px 0 #35cc6c;
+}
+.animated-text {
+     color: #fff;
+	font-size: 100px;
+    white-space: nowrap;
+	font-weight:bold;
+}
+
+.move-forward {
+    animation: slideLeftToRight 30s linear infinite;
+}
+
+.move-backward {
+    animation: slideRightToLeft 30s linear infinite;
+}
+
+@keyframes slideLeftToRight {
+   0% {
+       transform: translateX(-100vw);
+}
+   100% {
+        transform: translateX(100vw);
+            }
+}
+
+@keyframes slideRightToLeft {
+    0% {
+        transform: translateX(100vw);
+    }
+    100% {
+         transform: translateX(-100vw);
+     }
+}
+/*scroll animation end*/

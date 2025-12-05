@@ -170,6 +170,37 @@ function notout_widgets_init() {
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );
+	// Footer Widget 5
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer Widget 5', 'notout' ),
+		'id'            => 'footer-widget-5',
+		'description'   => esc_html__( 'Add widgets here.', 'notout' ),
+		'before_widget' => '<div id="%1$s" class="widget notout-footer-widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+	
+	// Footer Widget 6
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer Widget 6', 'notout' ),
+		'id'            => 'footer-widget-6',
+		'description'   => esc_html__( 'Add widgets here.', 'notout' ),
+		'before_widget' => '<div id="%1$s" class="widget notout-footer-widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+	// Footer Widget 7
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer Widget 7', 'notout' ),
+		'id'            => 'footer-widget-7',
+		'description'   => esc_html__( 'Add widgets here.', 'notout' ),
+		'before_widget' => '<div id="%1$s" class="widget notout-footer-widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
 	// Copyright Widget 1
 	register_sidebar( array(
 		'name'          => esc_html__( 'Copyright Widget 1', 'notout' ),
