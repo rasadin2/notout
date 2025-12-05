@@ -1,19 +1,19 @@
 /*!
-Theme Name: Notout
+Theme Name: Wicket
 Theme URI: http://underscores.me/
-Author: notout
-Author URI: http://notout.com
+Author: Md. Wicket
+Author URI: #
 Description: A modern WordPress starter theme
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: notout
+Text Domain: wicket
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-Notout is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Wicket is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -54,6 +54,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@100..900&display=swap')
 
 * {
 	-webkit-box-sizing: border-box;
@@ -80,7 +81,7 @@ html {
 }
 
 ::selection {
-	background: #22b0af;
+	background: #000;
 	color: #fff;
 	text-shadow: none;
 	text-shadow: 0.3px 0.3px #22b0af;
@@ -93,9 +94,16 @@ html{
 	color: #000000;
 	font-size: 18px;
 	line-height: 25px;
-	font-family: 'Poppins', sans-serif !important;
+	font-family: "Noto Sans Bengali", sans-serif!important;
 }
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+	font-family: "Noto Sans Bengali", sans-serif!important;
+}
 /* Sections
 	 ========================================================================== */
 
@@ -417,7 +425,7 @@ select,
 optgroup,
 textarea {
 	color: #404040;
-	font-family: 'Poppins', sans-serif;
+	font-family: "Noto Sans Bengali", sans-serif!important;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -430,7 +438,7 @@ h1, h2, h3, h4, h5, h6 {
 	color: #000000;
 	line-height: 1.4;
 	font-weight: 700;
-	font-family: 'Poppins', sans-serif !important;
+	font-family: "Noto Sans Bengali", sans-serif!important;
 }
 
 h1 {
@@ -471,7 +479,7 @@ p {
 	font-size: 16px;
 	line-height: 150%;
 	font-weight: 400;
-	font-family: 'Poppins', sans-serif !important;
+	font-family: "Noto Sans Bengali", sans-serif!important;
 }
 
 dfn, cite, em, i {
@@ -486,7 +494,7 @@ blockquote {
 	background: #FFF4DC;
 	border: 1.5px dashed #FEBA44;
 	border-radius:10px;
-	font-family: 'Poppins', sans-serif !important;
+	font-family: "Noto Sans Bengali", sans-serif!important;
 	position: relative;
 	margin: 20px 0px;
 }
@@ -506,7 +514,7 @@ address {
 
 pre {
 	background: #eee;
-	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-family: "Noto Sans Bengali", sans-serif !important;
 	font-size: 15px;
 	font-size: 0.9375rem;
 	line-height: 1.6;
@@ -533,7 +541,7 @@ table, th, td {
 	font-size: 16px;
 	line-height: 29px;
 	font-weight: normal;
-	font-family: 'Poppins', sans-serif !important;
+	font-family: "Noto Sans Bengali", sans-serif!important;
 	padding: 6px 15px;
 }
 table tr:nth-child(2n) {
@@ -1101,4 +1109,8 @@ object {
 
 .gallery-caption {
 	display: block;
+}
+
+span.value-2 > a {
+    color: black;
 }
