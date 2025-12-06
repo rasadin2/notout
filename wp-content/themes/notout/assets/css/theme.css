@@ -155,9 +155,7 @@ header .container {
 /* Portrait and Landscape */
 @media only screen
 and (max-width: 1080px) {
-    .notout-navbar {
-        background-color: #303030;
-    }
+ 
     .notout-navbar .container {
         padding: 0;
     }
@@ -178,7 +176,7 @@ and (max-width: 1080px) {
         align-items: center;
         justify-content: space-between;
         height: 60px;
-        border-bottom: 1px solid rgba(255,255,255, 0.7);
+        border-bottom: 0px solid rgba(255,255,255, 0.7);
     }
     .notout-navbar-toggler {
         display: block;
@@ -192,14 +190,17 @@ and (max-width: 1080px) {
         display: none;
         width: 100%;
         padding: 0 15px;
-        background: #f1f1f1;
+        background:#015A30;
+		position: absolute;
+        top: 85px;
+		padding: 0 0;
     }
     .notout-main-menu > li {
         display: block;
-        border-bottom: 1px solid rgba(255,255,255, 0.7);
+        border-bottom:1px solid rgb(12 108 63);
     }
     .notout-main-menu li a {
-        padding: 10px 0px;
+        padding: 10px 20px;
     }
     .notout-main-menu .menu-item-has-children:after {
         display: none;
@@ -301,8 +302,8 @@ and (max-width: 1080px) {
     }
     .notout-navbar-toggler {
         display: block;
-        right: 10px;
-        top: 20px;
+        right: 6px;
+        top: 30px;
         width: 24px;
         position: absolute;
         cursor: pointer;

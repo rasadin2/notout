@@ -23,8 +23,8 @@
 		<!-- Widgets -->
 		<div class="container first-bottom">
 			<div class="row">
-			   <div class="col-md-8 col-sm-6"><div class="logo-content"><?php dynamic_sidebar( 'footer-widget-6' ); ?></div></div>
-			   <div class="col-md-4 col-sm-6"><?php dynamic_sidebar( 'footer-widget-7' ); ?></div>
+			   <div class="col-md-8 col-sm-6 first-colume"><div class="logo-content"><?php dynamic_sidebar( 'footer-widget-6' ); ?></div></div>
+			   <div class="col-md-4 col-sm-6 second-colume"><?php dynamic_sidebar( 'footer-widget-7' ); ?></div>
 			</div>
 		</div>
 		<div class="container second-bottom">
@@ -49,7 +49,7 @@
 		<!-- Copyright -->
 		<div class="container footer-copy-right">
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-sm-12 col-md-12">
 					<?php dynamic_sidebar( 'copyright-widget-1' ); ?>
 				</div>
 				<!--<div class="col-md-6">
