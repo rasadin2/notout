@@ -363,9 +363,15 @@ and (max-width: 1080px) {
 .bottom-footer ul li{
 	list-style-type:none;
 }
+.foo-colume-5 p a,
 .bottom-footer ul li a{
 	color:#ffffff;
 	font-size: 15px;
+	text-decoration:none !important;
+}
+.foo-colume-5 p a:hover,
+.bottom-footer ul li a:hover{
+	color:#f0f812;
 }
 .footer-copy-right{
 	text-align:center;
