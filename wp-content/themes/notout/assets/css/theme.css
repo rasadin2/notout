@@ -1439,3 +1439,6 @@ border-radius: 16px;
 	left: 0;
     top: 0;
 }
+.header-bg-box {
+    margin-top: -2px;
+}
