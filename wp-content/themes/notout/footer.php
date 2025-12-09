@@ -35,15 +35,13 @@
 				<div class="col-md-3 col-sm-6 foo-colume-2">
 					<?php dynamic_sidebar( 'footer-widget-2' ); ?>
 				</div>
-				<div class="col-md-2 col-sm-6 foo-colume-3">
+				<div class="col-md-3 col-sm-6 foo-colume-3">
 					<?php dynamic_sidebar( 'footer-widget-3' ); ?>
 				</div>
-				<div class="col-md-2 col-sm-6 foo-colume-4">
+				<div class="col-md-3 col-sm-6 foo-colume-4">
 					<?php dynamic_sidebar( 'footer-widget-4' ); ?>
 				</div>
-				<div class="col-md-2 col-sm-6 foo-colume-5">
-					<?php dynamic_sidebar( 'footer-widget-5' ); ?>
-				</div>
+				
 			</div>
 		</div>
 		<!-- Copyright -->
