@@ -1442,3 +1442,68 @@ border-radius: 16px;
 .header-bg-box {
     margin-top: -2px;
 }
+.section-title .elementor-image-box-img{
+	width:32px !important;
+}
+.section-title .elementor-image-box-title{
+	margin:0 0 0 0;
+}
+.section-title .elementor-image-box-wrapper{
+	align-items: center !important;
+}
+.feature-box-colum{
+	background: #FFFFFF;
+box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -4px rgba(0, 0, 0, 0.1);
+border-radius: 16px !important;
+}
+.criame-btn a{
+	width:100% !important;
+}
+.pp-bikash-payment-icon-box{
+background: linear-gradient(135deg, #ECFDF5 0%, #F7FEE7 100%);
+border-radius: 16px;
+}
+
+.bonus-payment-section-bg{
+	background: #FFFFFF;
+	box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 8px 10px -6px rgba(0, 0, 0, 0.1);
+	border-radius: 24px !important;
+}
+.bonus-number-text .elementor-heading-title{
+	width:64px;
+	height:64px;
+	border-radius:50%;
+	background: linear-gradient(135deg, #7CCF00 0%, #9AE600 100%);
+	display:flex;
+	align-items: center;
+    justify-content: center;
+	margin: 0 auto;
+}
+.vip-bonus-number-text .elementor-heading-title{
+	width:64px;
+	height:64px;
+	border-radius:50%;
+	background: rgba(255, 255, 255, 0.2);
+	display:flex;
+	align-items: center;
+    justify-content: center;
+	margin: 0 auto;
+}
+.vi-bg-color{
+	background: #FFFFFF;
+   box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 8px 10px -6px rgba(0, 0, 0, 0.1);
+   border-radius: 24px !important;
+}
+
+.note-title .elementor-image-box-img{
+	width:22px !important;
+}
+.note-title .elementor-image-box-title{
+	margin:0 0 0 0;
+}
+.note-title .elementor-image-box-wrapper{
+	align-items: center !important;
+}
+.page-id-1826{
+	background: #F2FEEE;
+}
