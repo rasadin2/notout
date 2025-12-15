@@ -56,10 +56,20 @@
 }
 /*Tab Portrait*/
 @media only screen and (max-width:768px) {
-
+.header-top-bar {
+    padding: 10px 30px;
+    display: none;
+}
 }
 /*Mobile View Start*/
 @media only screen and (max-width:767px) {
+.notout-main-menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-right: auto;
+    margin-left: 0;
+}
 .header-top-bar {
     padding: 10px 30px;
     display: none;
@@ -105,7 +115,7 @@
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
     max-width: 100%;
-	padding-left:0px;
+	padding-left:15px;
 }
 .footer-copy-right {
     margin-top: 14px;
