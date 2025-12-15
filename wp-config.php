@@ -20,7 +20,7 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'notoutdb' );
+define( 'DB_NAME', 'abc' );
 
 /** Database username */
 define( 'DB_USER', 'root' );
@@ -85,9 +85,28 @@ $table_prefix = 'wp_';
  *
  * @link https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/
  */
-define( 'WP_DEBUG', false );
+define( 'WP_DEBUG', true );
+define( 'WP_DEBUG_LOG', true );
+define( 'WP_DEBUG_DISPLAY', false );
 
 /* Add any custom values between this line and the "stop editing" line. */
+
+// Fix for login redirect loop on localhost
+define('WP_HOME', 'http://localhost/notout');
+define('WP_SITEURL', 'http://localhost/notout');
+
+// Force correct cookie settings for localhost
+define('COOKIE_DOMAIN', '');
+define('COOKIEPATH', '/notout/');
+define('SITECOOKIEPATH', '/notout/');
+define('ADMIN_COOKIE_PATH', '/notout/');
+define('PLUGINS_COOKIE_PATH', '/notout/wp-content/plugins');
+
+// Disable script concatenation (can cause login issues)
+define('CONCATENATE_SCRIPTS', false);
+
+// Force fresh login
+define('WP_CACHE', false);
 
 
 
