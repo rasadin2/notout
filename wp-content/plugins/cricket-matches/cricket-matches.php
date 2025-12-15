@@ -2410,3 +2410,357 @@ function cricket_matches_enqueue_styles() {
     );
 }
 add_action('wp_enqueue_scripts', 'cricket_matches_enqueue_styles');
+
+/**
+ * Add Shortcode List Page to Settings Menu
+ */
+function cricket_matches_add_shortcode_list_page() {
+    add_options_page(
+        'Cricket Shortcode List',
+        'Cricket Shortcodes',
+        'manage_options',
+        'cricket-shortcode-list',
+        'cricket_matches_render_shortcode_list_page'
+    );
+}
+add_action('admin_menu', 'cricket_matches_add_shortcode_list_page');
+
+/**
+ * Render Shortcode List Page
+ */
+function cricket_matches_render_shortcode_list_page() {
+    ?>
+    <div class="wrap cricket-shortcode-list-wrap">
+        <h1>🏏 Cricket Matches Plugin - Shortcode List</h1>
+        <p class="description">All available shortcodes for the Cricket Matches plugin. Click the copy button to copy any shortcode.</p>
+
+        <style>
+            .cricket-shortcode-list-wrap {
+                max-width: 1200px;
+            }
+            .shortcode-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+                gap: 20px;
+                margin-top: 30px;
+            }
+            .shortcode-card {
+                background: #fff;
+                border: 1px solid #c3c4c7;
+                border-radius: 8px;
+                padding: 20px;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+                transition: all 0.3s ease;
+            }
+            .shortcode-card:hover {
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                transform: translateY(-2px);
+            }
+            .shortcode-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 15px;
+                padding-bottom: 15px;
+                border-bottom: 2px solid #002C22;
+            }
+            .shortcode-title {
+                font-size: 18px;
+                font-weight: 600;
+                color: #002C22;
+                margin: 0;
+            }
+            .shortcode-badge {
+                background: #002C22;
+                color: #fff;
+                padding: 4px 12px;
+                border-radius: 12px;
+                font-size: 12px;
+                font-weight: 600;
+            }
+            .shortcode-code-block {
+                background: #f6f7f7;
+                border: 1px solid #dcdcde;
+                border-radius: 4px;
+                padding: 12px;
+                margin: 10px 0;
+                font-family: 'Courier New', monospace;
+                font-size: 14px;
+                position: relative;
+            }
+            .shortcode-code-block code {
+                color: #d63638;
+                font-weight: 600;
+            }
+            .copy-shortcode-btn {
+                position: absolute;
+                top: 8px;
+                right: 8px;
+                background: #002C22;
+                color: #fff;
+                border: none;
+                padding: 6px 12px;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 12px;
+                transition: all 0.2s ease;
+            }
+            .copy-shortcode-btn:hover {
+                background: #004d3d;
+            }
+            .copy-shortcode-btn.copied {
+                background: #00a32a;
+            }
+            .shortcode-description {
+                color: #50575e;
+                line-height: 1.6;
+                margin: 10px 0;
+            }
+            .shortcode-params {
+                margin-top: 15px;
+            }
+            .shortcode-params h4 {
+                font-size: 14px;
+                font-weight: 600;
+                color: #1d2327;
+                margin-bottom: 8px;
+            }
+            .param-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            .param-list li {
+                padding: 6px 0;
+                border-bottom: 1px solid #f0f0f1;
+                font-size: 13px;
+            }
+            .param-list li:last-child {
+                border-bottom: none;
+            }
+            .param-name {
+                font-weight: 600;
+                color: #002C22;
+                font-family: 'Courier New', monospace;
+            }
+            .param-default {
+                color: #787c82;
+                font-style: italic;
+            }
+            .shortcode-examples {
+                margin-top: 15px;
+                padding-top: 15px;
+                border-top: 1px solid #dcdcde;
+            }
+            .shortcode-examples h4 {
+                font-size: 14px;
+                font-weight: 600;
+                color: #1d2327;
+                margin-bottom: 8px;
+            }
+            @media (max-width: 768px) {
+                .shortcode-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+
+        <div class="shortcode-grid">
+
+            <!-- Shortcode 1: cricket_matches -->
+            <div class="shortcode-card">
+                <div class="shortcode-header">
+                    <h3 class="shortcode-title">[cricket_matches]</h3>
+                    <span class="shortcode-badge">Basic Display</span>
+                </div>
+                <div class="shortcode-code-block">
+                    <code>[cricket_matches]</code>
+                    <button class="copy-shortcode-btn" onclick="copyCricketShortcode(this, '[cricket_matches]')">Copy</button>
+                </div>
+                <p class="shortcode-description">
+                    <strong>Post Type:</strong> <code>cricket_match</code><br>
+                    Displays cricket matches from the "Cricket Match" custom post type in a responsive grid layout. Shows all match details including teams, time, predictions, odds, and betting buttons.
+                </p>
+                <div class="shortcode-params">
+                    <h4>Parameters:</h4>
+                    <ul class="param-list">
+                        <li><span class="param-name">limit</span> - Number of matches to display <span class="param-default">(default: -1 = all)</span></li>
+                        <li><span class="param-name">orderby</span> - Sort by field <span class="param-default">(default: date)</span></li>
+                        <li><span class="param-name">order</span> - ASC or DESC <span class="param-default">(default: DESC)</span></li>
+                    </ul>
+                </div>
+                <div class="shortcode-examples">
+                    <h4>Examples:</h4>
+                    <div class="shortcode-code-block">
+                        <code>[cricket_matches limit="6"]</code>
+                        <button class="copy-shortcode-btn" onclick="copyCricketShortcode(this, '[cricket_matches limit=&quot;6&quot;]')">Copy</button>
+                    </div>
+                    <div class="shortcode-code-block">
+                        <code>[cricket_matches limit="3" orderby="title" order="ASC"]</code>
+                        <button class="copy-shortcode-btn" onclick="copyCricketShortcode(this, '[cricket_matches limit=&quot;3&quot; orderby=&quot;title&quot; order=&quot;ASC&quot;]')">Copy</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shortcode 2: cricket_matches_paged -->
+            <div class="shortcode-card">
+                <div class="shortcode-header">
+                    <h3 class="shortcode-title">[cricket_matches_paged]</h3>
+                    <span class="shortcode-badge">With Pagination</span>
+                </div>
+                <div class="shortcode-code-block">
+                    <code>[cricket_matches_paged]</code>
+                    <button class="copy-shortcode-btn" onclick="copyCricketShortcode(this, '[cricket_matches_paged]')">Copy</button>
+                </div>
+                <p class="shortcode-description">
+                    <strong>Post Type:</strong> <code>cricket_match</code><br>
+                    Displays cricket matches with pagination support and column control. Perfect for archive pages with many matches. Includes Bengali pagination with professional design.
+                </p>
+                <div class="shortcode-params">
+                    <h4>Parameters:</h4>
+                    <ul class="param-list">
+                        <li><span class="param-name">limit</span> - Posts per page <span class="param-default">(default: 6)</span></li>
+                        <li><span class="param-name">columns</span> - Number of columns (1-4) <span class="param-default">(default: 3)</span></li>
+                        <li><span class="param-name">orderby</span> - Sort by field <span class="param-default">(default: date)</span></li>
+                        <li><span class="param-name">order</span> - ASC or DESC <span class="param-default">(default: DESC)</span></li>
+                    </ul>
+                </div>
+                <div class="shortcode-examples">
+                    <h4>Examples:</h4>
+                    <div class="shortcode-code-block">
+                        <code>[cricket_matches_paged limit="6" columns="3"]</code>
+                        <button class="copy-shortcode-btn" onclick="copyCricketShortcode(this, '[cricket_matches_paged limit=&quot;6&quot; columns=&quot;3&quot;]')">Copy</button>
+                    </div>
+                    <div class="shortcode-code-block">
+                        <code>[cricket_matches_paged limit="9" columns="3"]</code>
+                        <button class="copy-shortcode-btn" onclick="copyCricketShortcode(this, '[cricket_matches_paged limit=&quot;9&quot; columns=&quot;3&quot;]')">Copy</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shortcode 3: cricket_matches_list -->
+            <div class="shortcode-card">
+                <div class="shortcode-header">
+                    <h3 class="shortcode-title">[cricket_matches_list]</h3>
+                    <span class="shortcode-badge">List + Load More</span>
+                </div>
+                <div class="shortcode-code-block">
+                    <code>[cricket_matches_list]</code>
+                    <button class="copy-shortcode-btn" onclick="copyCricketShortcode(this, '[cricket_matches_list]')">Copy</button>
+                </div>
+                <p class="shortcode-description">
+                    <strong>Post Type:</strong> <code>cricket_match</code><br>
+                    Displays cricket matches in a list/blog layout with "Load More" AJAX button. Includes excerpt, author info, Bengali date, and placeholder images. Automatically loads more posts without page reload.
+                </p>
+                <div class="shortcode-params">
+                    <h4>Parameters:</h4>
+                    <ul class="param-list">
+                        <li><span class="param-name">limit</span> - Posts per load <span class="param-default">(default: 6)</span></li>
+                    </ul>
+                </div>
+                <div class="shortcode-examples">
+                    <h4>Examples:</h4>
+                    <div class="shortcode-code-block">
+                        <code>[cricket_matches_list limit="6"]</code>
+                        <button class="copy-shortcode-btn" onclick="copyCricketShortcode(this, '[cricket_matches_list limit=&quot;6&quot;]')">Copy</button>
+                    </div>
+                    <div class="shortcode-code-block">
+                        <code>[cricket_matches_list limit="9"]</code>
+                        <button class="copy-shortcode-btn" onclick="copyCricketShortcode(this, '[cricket_matches_list limit=&quot;9&quot;]')">Copy</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shortcode 4: cricket_posts -->
+            <div class="shortcode-card">
+                <div class="shortcode-header">
+                    <h3 class="shortcode-title">[cricket_posts]</h3>
+                    <span class="shortcode-badge">WordPress Posts</span>
+                </div>
+                <div class="shortcode-code-block">
+                    <code>[cricket_posts]</code>
+                    <button class="copy-shortcode-btn" onclick="copyCricketShortcode(this, '[cricket_posts]')">Copy</button>
+                </div>
+                <p class="shortcode-description">
+                    <strong>Post Type:</strong> <code>post</code> (regular WordPress posts)<br>
+                    Displays regular WordPress posts with cricket match data from the meta box. Perfect for blog posts about matches. Shows image, teams, time, predictions, and betting info in match card format.
+                </p>
+                <div class="shortcode-params">
+                    <h4>Parameters:</h4>
+                    <ul class="param-list">
+                        <li><span class="param-name">limit</span> - Number of posts <span class="param-default">(default: -1 = all)</span></li>
+                        <li><span class="param-name">orderby</span> - Sort by field <span class="param-default">(default: date)</span></li>
+                        <li><span class="param-name">order</span> - ASC or DESC <span class="param-default">(default: DESC)</span></li>
+                    </ul>
+                </div>
+                <div class="shortcode-examples">
+                    <h4>Examples:</h4>
+                    <div class="shortcode-code-block">
+                        <code>[cricket_posts limit="6"]</code>
+                        <button class="copy-shortcode-btn" onclick="copyCricketShortcode(this, '[cricket_posts limit=&quot;6&quot;]')">Copy</button>
+                    </div>
+                    <div class="shortcode-code-block">
+                        <code>[cricket_posts limit="10" order="ASC"]</code>
+                        <button class="copy-shortcode-btn" onclick="copyCricketShortcode(this, '[cricket_posts limit=&quot;10&quot; order=&quot;ASC&quot;]')">Copy</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shortcode 5: blog_listing -->
+            <div class="shortcode-card">
+                <div class="shortcode-header">
+                    <h3 class="shortcode-title">[blog_listing]</h3>
+                    <span class="shortcode-badge">Blog Posts</span>
+                </div>
+                <div class="shortcode-code-block">
+                    <code>[blog_listing]</code>
+                    <button class="copy-shortcode-btn" onclick="copyCricketShortcode(this, '[blog_listing]')">Copy</button>
+                </div>
+                <p class="shortcode-description">
+                    <strong>Post Type:</strong> <code>post</code> (regular WordPress posts)<br>
+                    Displays regular WordPress blog posts with pagination. Shows featured image, title, excerpt, reading time, date, and author. Professional pagination design with Bengali numbers.
+                </p>
+                <div class="shortcode-params">
+                    <h4>Parameters:</h4>
+                    <ul class="param-list">
+                        <li><span class="param-name">posts_per_page</span> - Posts per page <span class="param-default">(default: 6)</span></li>
+                        <li><span class="param-name">category</span> - Category slug to filter <span class="param-default">(default: all)</span></li>
+                        <li><span class="param-name">orderby</span> - Sort by field <span class="param-default">(default: date)</span></li>
+                        <li><span class="param-name">order</span> - ASC or DESC <span class="param-default">(default: DESC)</span></li>
+                    </ul>
+                </div>
+                <div class="shortcode-examples">
+                    <h4>Examples:</h4>
+                    <div class="shortcode-code-block">
+                        <code>[blog_listing posts_per_page="6"]</code>
+                        <button class="copy-shortcode-btn" onclick="copyCricketShortcode(this, '[blog_listing posts_per_page=&quot;6&quot;]')">Copy</button>
+                    </div>
+                    <div class="shortcode-code-block">
+                        <code>[blog_listing posts_per_page="9" category="news"]</code>
+                        <button class="copy-shortcode-btn" onclick="copyCricketShortcode(this, '[blog_listing posts_per_page=&quot;9&quot; category=&quot;news&quot;]')">Copy</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script>
+        function copyCricketShortcode(button, text) {
+            navigator.clipboard.writeText(text).then(function() {
+                var originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.classList.add('copied');
+
+                setTimeout(function() {
+                    button.textContent = originalText;
+                    button.classList.remove('copied');
+                }, 2000);
+            }).catch(function(err) {
+                alert('Failed to copy: ' + err);
+            });
+        }
+        </script>
+    </div>
+    <?php
+}
+
