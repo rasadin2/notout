@@ -1583,6 +1583,8 @@ border-radius: 24px;
 	padding: 9px 30px !important;
 	border-radius:50px!important;
 	background-color:#155DFC;
+	margin-bottom:10px;
+	text-decoration:none !important;
 }
 .share-content .elementor-icon-list-item:nth-child(2) a{
 	background-color:#00A6F4;
@@ -1863,4 +1865,29 @@ span.category-badge.right-badge-text {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.view-detail-box-list .elementor-image-box-title{
+	margin:0px 0px 0px 0px !important;
+}
+.view-detail-box-list .elementor-image-box-img{
+	width:32px !Important;
+	height:32px !important;
+}
+.comment-box-info{
+	background: linear-gradient(90deg, #7CCF00 0%, #9AE600 100%);
+    box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 8px 10px -6px rgba(0, 0, 0, 0.1);
+
+}
+
+
+.view-detail-box-list-sib-tile .elementor-image-box-title{
+	margin:0px 0px 0px 0px !important;
+}
+.view-detail-box-list-sib-tile .elementor-image-box-img{
+	width:24px !Important;
+	height:24px !important;
+}
+
+.batting-tips-bg{
+	
 }

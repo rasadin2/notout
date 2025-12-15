@@ -75,6 +75,10 @@
 }
 /*Mobile View Start*/
 @media only screen and (max-width:767px) {
+.share-content .elementor-icon-list-item a {
+    padding: 7px 23px !important;
+    font-size: 18px;
+}
 .notout-main-menu {
     padding: 0;
     margin: 0;
@@ -196,15 +200,9 @@
     right: 0px;
     top: 28px;
  }
- .notout-main-menu {
-    display: none;
-    width: 100%;
-    padding: 0 15px;
-    background: #015A30;
-    position: absolute;
+.notout-main-menu {
     top: 70px;
-    padding: 0 0;
-}
+ }
 }
 /*Mobile View Small*/
 @media only screen and (max-width:360px) {
