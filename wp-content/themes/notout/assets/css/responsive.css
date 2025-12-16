@@ -18,6 +18,16 @@
 .notout-brand-wrap {
     height: 60px;
 }
+.notout-navbar {
+    min-height: 98px;
+}
+.notout-main-menu {
+
+    margin-left: 0;
+}
+.list-image-box {
+    width: 48.5% !important;
+}
 }
 /*Tab Portrait*/
 @media only screen and (max-width:991px) {
@@ -58,10 +68,9 @@
     font-size: 14px;
     line-height: 27px;
 }
-.notout-navbar {
-    min-height: 70px;
+.foo-colume-4 {
+    padding-left: 0;
 }
-
 }
 /*Tab Portrait*/
 @media only screen and (max-width:768px) {
@@ -109,11 +118,15 @@
     grid-template-columns: repeat(1, minmax(0, 1fr));
     grid-gap: 20px;
 }
+.blog-detail-list .container,
 .cricket-container-match .matches-grid,
 .sports-post-container .grid{
 	display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
     grid-gap: 20px;
+}
+.blog-detail-list .container{
+	padding:0;
 }
 ..cricket-container-match .match-teams {
     font-size: 16px;
@@ -203,6 +216,16 @@
 .notout-main-menu {
     top: 70px;
  }
+.notout-navbar {
+    min-height: 70px;
+}
+.cricket-container-match .badge {
+    padding: 13px 9px;
+    font-size: 10px;
+}
+.platfrom-icon-box .elementor-image-box-wrapper {
+    padding: 20px 20px;
+}
 }
 /*Mobile View Small*/
 @media only screen and (max-width:360px) {
