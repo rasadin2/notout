@@ -67,8 +67,10 @@ header .container {
     z-index: 10;
     padding: 0px;
     margin: 0px;
-    width: 225px;
-    background: #f1f1f1;
+    width: 275px;
+    background: #ffffff;
+    border-radius: 10px;
+	padding:10px 0px;
 }
 .notout-main-menu li > .sub-menu li {
     display: block;
@@ -78,9 +80,16 @@ header .container {
 .notout-main-menu li > .sub-menu li a {
     display: block;
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 13px 15px;
     line-height: 1.5;
-    border-bottom: 1px solid rgba(255,255,255, 0.7);
+    border-bottom: 1px solid rgba(0,0,0, 0.1);
+	color: #000;
+}
+.notout-main-menu li > .sub-menu li a:hover{
+	
+}
+.notout-main-menu li > .sub-menu li:last-child a {
+	border-bottom:0px solid rgba(255,255,255, 0.7);
 }
 .notout-main-menu li > .sub-menu li ul.sub-menu {
     display: block;
@@ -122,6 +131,7 @@ header .container {
     transform: translate(-50%, -50%);
     z-index: 10;
     width: 10px;
+	color:#ffffff;
 }
 .notout-main-menu > .menu-item-has-children:hover::after {
     content: "\f077";
