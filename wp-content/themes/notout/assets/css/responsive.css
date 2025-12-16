@@ -226,6 +226,9 @@
 .platfrom-icon-box .elementor-image-box-wrapper {
     padding: 20px 20px;
 }
+.bottom-footer h4 {
+    margin: 10px 0 15px 0;
+}
 }
 /*Mobile View Small*/
 @media only screen and (max-width:360px) {
