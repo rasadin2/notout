@@ -156,3 +156,4 @@
 [19-Dec-2025 05:48:33 UTC]   Automatic plugin updates starting...
 [19-Dec-2025 05:48:33 UTC]   Automatic plugin updates complete.
 [19-Dec-2025 05:48:33 UTC] Automatic updates complete.
+[19-Dec-2025 10:12:51 UTC] WordPress database error Duplicate entry '3522-4' for key 'PRIMARY' for query INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`) VALUES (3522, 4) made by wp_nav_menu_update_menu_items, wp_update_nav_menu_item, wp_set_object_terms
