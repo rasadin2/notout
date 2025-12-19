@@ -10,7 +10,12 @@
       "Bash(mkdir:*)",
       "mcp__sequential-thinking__sequentialthinking",
       "Bash(./mysql:*)",
-      "Bash(php -i:*)"
+      "Bash(php -i:*)",
+      "Bash(php update-button-text.php:*)",
+      "Bash(php migrate-post-type.php:*)",
+      "Bash(php -r:*)",
+      "Bash(php verify-migration.php:*)",
+      "Bash(php:*)"
     ],
     "deny": [],
     "ask": []

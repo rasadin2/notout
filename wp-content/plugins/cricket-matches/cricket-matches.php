@@ -25,10 +25,10 @@ define('CRICKET_MATCHES_PLUGIN_URL', plugin_dir_url(__FILE__));
  */
 function cricket_matches_register_post_type() {
     $labels = array(
-        'name'                  => _x('Cricket Matches', 'Post Type General Name', 'cricket-matches'),
-        'singular_name'         => _x('Cricket Match', 'Post Type Singular Name', 'cricket-matches'),
-        'menu_name'            => __('Cricket Matches', 'cricket-matches'),
-        'name_admin_bar'       => __('Cricket Match', 'cricket-matches'),
+        'name'                  => _x('Match Predictions', 'Post Type General Name', 'cricket-matches'),
+        'singular_name'         => _x('Match Prediction', 'Post Type Singular Name', 'cricket-matches'),
+        'menu_name'            => __('Match Predictions', 'cricket-matches'),
+        'name_admin_bar'       => __('Match Prediction', 'cricket-matches'),
         'archives'             => __('Match Archives', 'cricket-matches'),
         'attributes'           => __('Match Attributes', 'cricket-matches'),
         'parent_item_colon'    => __('Parent Match:', 'cricket-matches'),
@@ -55,7 +55,7 @@ function cricket_matches_register_post_type() {
     );
 
     $args = array(
-        'label'               => __('Cricket Match', 'cricket-matches'),
+        'label'               => __('Match Prediction', 'cricket-matches'),
         'description'         => __('Cricket match information', 'cricket-matches'),
         'labels'              => $labels,
         'supports'            => array('title', 'thumbnail', 'editor', 'custom-fields'),
@@ -75,7 +75,7 @@ function cricket_matches_register_post_type() {
         'show_in_rest'        => true,
     );
 
-    register_post_type('cricket_match', $args);
+    register_post_type('match_prediction', $args);
 }
 add_action('init', 'cricket_matches_register_post_type', 0);
 
@@ -88,7 +88,7 @@ function cricket_matches_add_meta_boxes() {
         'cricket_match_details',
         __('Match Details', 'cricket-matches'),
         'cricket_matches_meta_box_callback',
-        'cricket_match',
+        'match_prediction',
         'normal',
         'high'
     );
@@ -189,13 +189,9 @@ function cricket_matches_meta_box_callback($post) {
     </div>
 
     <div class="cricket-meta-field">
-        <label for="cricket_bet_button_text"><?php _e('Bet Button Text (e.g., এখনই বেট করুন →)', 'cricket-matches'); ?></label>
+        <label for="cricket_bet_button_text"><?php _e('Read Details Button Text (e.g., বিস্তারিত দেখুন)', 'cricket-matches'); ?></label>
         <input type="text" id="cricket_bet_button_text" name="cricket_bet_button_text" value="<?php echo esc_attr($bet_button_text); ?>" />
-    </div>
-
-    <div class="cricket-meta-field">
-        <label for="cricket_bet_button_url"><?php _e('Bet Button URL', 'cricket-matches'); ?></label>
-        <input type="text" id="cricket_bet_button_url" name="cricket_bet_button_url" value="<?php echo esc_attr($bet_button_url); ?>" placeholder="https://" />
+        <p class="description"><?php _e('Button links to the match details page automatically', 'cricket-matches'); ?></p>
     </div>
     <?php
 }
@@ -284,13 +280,9 @@ function cricket_matches_post_meta_box_callback($post) {
     </div>
 
     <div class="cricket-post-meta-field">
-        <label for="cricket_post_bet_button_text"><?php _e('Bet Button Text (e.g., এখনই বেট করুন →)', 'cricket-matches'); ?></label>
+        <label for="cricket_post_bet_button_text"><?php _e('Read Details Button Text (e.g., বিস্তারিত দেখুন)', 'cricket-matches'); ?></label>
         <input type="text" id="cricket_post_bet_button_text" name="cricket_post_bet_button_text" value="<?php echo esc_attr($bet_button_text); ?>" />
-    </div>
-
-    <div class="cricket-post-meta-field">
-        <label for="cricket_post_bet_button_url"><?php _e('Bet Button URL', 'cricket-matches'); ?></label>
-        <input type="text" id="cricket_post_bet_button_url" name="cricket_post_bet_button_url" value="<?php echo esc_attr($bet_button_url); ?>" placeholder="https://" />
+        <p class="description"><?php _e('Button links to the post details page automatically', 'cricket-matches'); ?></p>
     </div>
     <?php
 }
@@ -328,7 +320,6 @@ function cricket_matches_save_meta_box_data($post_id) {
             'cricket_total_bets',
             'cricket_odds',
             'cricket_bet_button_text',
-            'cricket_bet_button_url',
         );
 
         foreach ($fields as $field) {
@@ -369,7 +360,6 @@ function cricket_matches_save_meta_box_data($post_id) {
             'cricket_post_total_bets',
             'cricket_post_odds',
             'cricket_post_bet_button_text',
-            'cricket_post_bet_button_url',
         );
 
         foreach ($post_fields as $field) {
@@ -395,7 +385,7 @@ function cricket_matches_shortcode($atts) {
     ), $atts, 'cricket_matches');
 
     $args = array(
-        'post_type' => 'cricket_match',
+        'post_type' => 'match_prediction',
         'posts_per_page' => intval($atts['limit']),
         'orderby' => $atts['orderby'],
         'order' => $atts['order'],
@@ -422,8 +412,8 @@ function cricket_matches_shortcode($atts) {
                         $prediction_text = get_post_meta($post_id, '_cricket_prediction_text', true);
                         $total_bets = get_post_meta($post_id, '_cricket_total_bets', true);
                         $odds = get_post_meta($post_id, '_cricket_odds', true);
-                        $bet_button_text = get_post_meta($post_id, '_cricket_bet_button_text', true) ?: 'এখনই বেট করুন →';
-                        $bet_button_url = get_post_meta($post_id, '_cricket_bet_button_url', true);
+                        $bet_button_text = get_post_meta($post_id, '_cricket_bet_button_text', true) ?: 'বিস্তারিত দেখুন';
+                        $bet_button_url = get_permalink($post_id);
                         $thumbnail_url = get_the_post_thumbnail_url($post_id, 'full');
                     ?>
                     <div class="match-card">
@@ -489,15 +479,9 @@ function cricket_matches_shortcode($atts) {
                                 </div>
                             <?php endif; ?>
 
-                            <?php if ($bet_button_url) : ?>
-                                <a href="<?php echo esc_url($bet_button_url); ?>" class="bet-button">
-                                    <?php echo esc_html($bet_button_text); ?>
-                                </a>
-                            <?php else : ?>
-                                <button class="bet-button">
-                                    <?php echo esc_html($bet_button_text); ?>
-                                </button>
-                            <?php endif; ?>
+                            <a href="<?php echo esc_url($bet_button_url); ?>" class="bet-button">
+                                <?php echo esc_html($bet_button_text); ?>
+                            </a>
                         </div>
                     </div>
                     <?php endwhile; ?>
@@ -526,7 +510,7 @@ function cricket_matches_shortcode_list($atts) {
     $paged = max( 1, get_query_var('paged'), get_query_var('page') );
 
     $query = new WP_Query(array(
-        'post_type'      => 'cricket_match',
+        'post_type'      => 'match_prediction',
         'posts_per_page' => intval($atts['limit']),
         'paged'          => $paged,
     ));
@@ -567,7 +551,9 @@ function cricket_matches_shortcode_list($atts) {
                 </div>
 
                 <div class="card-content">
-                    <h2 class="card-title"><?php the_title(); ?></h2>
+                    <h2 class="card-title">
+                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                    </h2>
 
                     <div class="des-tex">
                         <p><?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?></p>
@@ -623,6 +609,183 @@ function cricket_matches_shortcode_list($atts) {
 add_shortcode('cricket_matches_list', 'cricket_matches_shortcode_list');
 
 /**
+ * Shortcode for Popular/Latest Posts
+ * Usage: [cricket_matches_popular limit="4"]
+ */
+function cricket_matches_popular_shortcode($atts) {
+    $atts = shortcode_atts(array(
+        'limit' => 4,
+    ), $atts, 'cricket_matches_popular');
+
+    $query = new WP_Query(array(
+        'post_type'      => 'match_prediction',
+        'posts_per_page' => intval($atts['limit']),
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+    ));
+
+    if (!$query->have_posts()) {
+        return '';
+    }
+
+    ob_start();
+    ?>
+    <div class="popular-category view-category-box">
+        <?php
+        $serial_number = 1;
+        while ($query->have_posts()) : $query->the_post();
+            $post_id = get_the_ID();
+            $post_views = get_post_meta($post_id, 'post_views_count', true);
+
+            // If no views recorded yet, default to post_id
+            if ($post_views == '' || $post_views === false) {
+                $post_views = $post_id;
+            }
+
+            // Convert views to Bengali if numeric
+            if (is_numeric($post_views)) {
+                $post_views = cricket_convert_to_bengali_number($post_views);
+            }
+        ?>
+        <div class="news-item">
+            <div class="news-number green"><?php echo cricket_convert_to_bengali_number($serial_number); ?></div>
+            <div class="news-content">
+                <div class="news-title">
+                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                </div>
+                <div class="news-date">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.6666 4.66663L8.99998 10.3333L5.66665 6.99996L1.33331 11.3333" stroke="#00BC7D" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M10.6667 4.66663H14.6667V8.66663" stroke="#00BC7D" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span><?php echo esc_html($post_views); ?> ভিউ</span>
+                </div>
+            </div>
+        </div>
+        <?php
+            $serial_number++;
+        endwhile;
+        wp_reset_postdata();
+        ?>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('cricket_matches_popular', 'cricket_matches_popular_shortcode');
+
+/**
+ * Shortcode to display latest posts from standard 'post' post type
+ * Usage: [latest_posts_list limit="5"]
+ */
+function latest_posts_list_shortcode($atts) {
+    $atts = shortcode_atts(array(
+        'limit' => 5,
+    ), $atts, 'latest_posts_list');
+
+    $query = new WP_Query(array(
+        'post_type'      => 'post',
+        'posts_per_page' => intval($atts['limit']),
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+    ));
+
+    if (!$query->have_posts()) {
+        return '';
+    }
+
+    // Color classes for alternating badge colors
+    $colors = array('green', 'yellow', 'orange', 'red', 'purple');
+
+    ob_start();
+    ?>
+    <div class="popular-category">
+        <?php
+        $serial_number = 1;
+        while ($query->have_posts()) : $query->the_post();
+            $post_id = get_the_ID();
+            $post_date = get_the_date('j F, Y');
+
+            // Convert date to Bengali (numbers and month names)
+            $post_date_bengali = cricket_convert_to_bengali_date($post_date);
+
+            // Get color class based on position (cycling through colors)
+            $color_index = ($serial_number - 1) % count($colors);
+            $color_class = $colors[$color_index];
+        ?>
+        <div class="news-item">
+            <div class="news-number <?php echo esc_attr($color_class); ?>"><?php echo cricket_convert_to_bengali_number($serial_number); ?></div>
+            <div class="news-content">
+                <div class="news-title">
+                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                </div>
+                <div class="news-date">
+                    <svg class="calendar-icon" viewBox="0 0 24 24">
+                        <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/>
+                    </svg>
+                    <span><?php echo esc_html($post_date_bengali); ?></span>
+                </div>
+            </div>
+        </div>
+        <?php
+            $serial_number++;
+        endwhile;
+        wp_reset_postdata();
+        ?>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('latest_posts_list', 'latest_posts_list_shortcode');
+
+/**
+ * Shortcode to display category list with post counts
+ * Usage: [category_list_with_count]
+ */
+function category_list_with_count_shortcode($atts) {
+    $atts = shortcode_atts(array(
+        'hide_empty' => true,
+        'orderby' => 'name',
+        'order' => 'ASC',
+    ), $atts, 'category_list_with_count');
+
+    // Get all categories for standard 'post' post type
+    $categories = get_categories(array(
+        'taxonomy' => 'category',
+        'hide_empty' => $atts['hide_empty'],
+        'orderby' => $atts['orderby'],
+        'order' => $atts['order'],
+    ));
+
+    if (empty($categories)) {
+        return '';
+    }
+
+    ob_start();
+    ?>
+    <div class="list-category-box-btn">
+        <ul class="elementor-icon-list-items">
+            <?php foreach ($categories as $category) :
+                $post_count = $category->count;
+                $post_count_bengali = cricket_convert_to_bengali_number($post_count);
+                $category_link = get_category_link($category->term_id);
+            ?>
+            <li class="elementor-icon-list-item">
+                <a href="<?php echo esc_url($category_link); ?>">
+                    <span class="elementor-icon-list-text">
+                        <?php echo esc_html($category->name); ?>
+                        <span class="number-ltext"><?php echo esc_html($post_count_bengali); ?></span>
+                    </span>
+                </a>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('category_list_with_count', 'category_list_with_count_shortcode');
+
+/**
  * AJAX Handler for Load More
  */
 function cricket_matches_list_load_more() {
@@ -630,7 +793,7 @@ function cricket_matches_list_load_more() {
     $limit = isset($_POST['limit']) ? intval($_POST['limit']) : 6;
 
     $query = new WP_Query(array(
-        'post_type'      => 'cricket_match',
+        'post_type'      => 'match_prediction',
         'posts_per_page' => $limit,
         'paged'          => $paged,
     ));
@@ -700,6 +863,39 @@ function cricket_matches_enqueue_load_more_script() {
     ));
 }
 add_action('wp_enqueue_scripts', 'cricket_matches_enqueue_load_more_script');
+
+/**
+ * Track post views - counts ALL page views including refreshes and repeated visits
+ */
+function cricket_track_post_views($post_id) {
+    if (!is_single()) return;
+    if (empty($post_id)) return;
+
+    // Don't count views from bots or logged-in admins
+    if (is_admin() || current_user_can('manage_options')) return;
+
+    // Increment view count on every page load
+    // Default starting value is the post ID itself
+    $count_key = 'post_views_count';
+    $count = get_post_meta($post_id, $count_key, true);
+
+    if ($count == '') {
+        // First view: initialize with post_id as starting value
+        delete_post_meta($post_id, $count_key);
+        add_post_meta($post_id, $count_key, $post_id);
+    } else {
+        $count++;
+        update_post_meta($post_id, $count_key, $count);
+    }
+}
+
+// Hook to track views on single post pages
+function cricket_track_views_on_load() {
+    if (is_singular('match_prediction')) {
+        cricket_track_post_views(get_the_ID());
+    }
+}
+add_action('wp_head', 'cricket_track_views_on_load');
 
 /**
  * Convert English numbers to Bengali (Bangla) numbers
@@ -956,7 +1152,7 @@ function cricket_matches_paged_shortcode($atts) {
     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
     $args = array(
-        'post_type' => 'cricket_match',
+        'post_type' => 'match_prediction',
         'posts_per_page' => intval($atts['limit']),
         'orderby' => $atts['orderby'],
         'order' => $atts['order'],
@@ -1002,8 +1198,8 @@ function cricket_matches_paged_shortcode($atts) {
                         $prediction_text = get_post_meta($post_id, '_cricket_prediction_text', true);
                         $total_bets = get_post_meta($post_id, '_cricket_total_bets', true);
                         $odds = get_post_meta($post_id, '_cricket_odds', true);
-                        $bet_button_text = get_post_meta($post_id, '_cricket_bet_button_text', true) ?: 'এখনই বেট করুন →';
-                        $bet_button_url = get_post_meta($post_id, '_cricket_bet_button_url', true);
+                        $bet_button_text = get_post_meta($post_id, '_cricket_bet_button_text', true) ?: 'বিস্তারিত দেখুন';
+                        $bet_button_url = get_permalink($post_id);
                         $thumbnail_url = get_the_post_thumbnail_url($post_id, 'full');
                     ?>
                     <div class="match-card">
@@ -1069,15 +1265,9 @@ function cricket_matches_paged_shortcode($atts) {
                                 </div>
                             <?php endif; ?>
 
-                            <?php if ($bet_button_url) : ?>
-                                <a href="<?php echo esc_url($bet_button_url); ?>" class="bet-button">
-                                    <?php echo esc_html($bet_button_text); ?>
-                                </a>
-                            <?php else : ?>
-                                <button class="bet-button">
-                                    <?php echo esc_html($bet_button_text); ?>
-                                </button>
-                            <?php endif; ?>
+                            <a href="<?php echo esc_url($bet_button_url); ?>" class="bet-button">
+                                <?php echo esc_html($bet_button_text); ?>
+                            </a>
                         </div>
                     </div>
                     <?php endwhile; ?>
@@ -1158,7 +1348,7 @@ add_action('admin_notices', 'cricket_matches_admin_notice');
  */
 function cricket_matches_add_admin_menu() {
     add_submenu_page(
-        'edit.php?post_type=cricket_match',
+        'edit.php?post_type=match_prediction',
         __('How to Use', 'cricket-matches'),
         __('How to Use', 'cricket-matches'),
         'manage_options',
@@ -1524,7 +1714,7 @@ function cricket_matches_help_page() {
         <div class="cricket-random-posts-section">
             <h2><?php _e('Quick Actions', 'cricket-matches'); ?></h2>
             <p><?php _e('Need more sample data? Click below to generate 20 additional random cricket match posts.', 'cricket-matches'); ?></p>
-            <a href="<?php echo wp_nonce_url(admin_url('edit.php?post_type=cricket_match&page=cricket-matches-help&cricket_generate_random=1'), 'cricket_generate_random'); ?>"
+            <a href="<?php echo wp_nonce_url(admin_url('edit.php?post_type=match_prediction&page=cricket-matches-help&cricket_generate_random=1'), 'cricket_generate_random'); ?>"
                class="button button-primary button-large">
                 <span class="dashicons dashicons-plus-alt" style="margin-top: 3px;"></span>
                 <?php _e('Generate 20 Random Match Posts', 'cricket-matches'); ?>
@@ -2051,8 +2241,7 @@ function cricket_matches_insert_sample_data() {
             'prediction_text' => 'দুমাই দেমে এখনও পরিচালনা। রেকর্ড পশার ফর্ম চমৎকার। টেবল টপেপ লেভেল পূরণ',
             'total_bets' => '৩,৫০০+',
             'odds' => '1.85',
-            'bet_button_text' => 'এখনই বেট করুন →',
-            'bet_button_url' => '#',
+            'bet_button_text' => 'বিস্তারিত দেখুন',
             'image' => 'match-image.png'
         ),
         array(
@@ -2067,8 +2256,7 @@ function cricket_matches_insert_sample_data() {
             'prediction_text' => 'সনকাতারের শিরোনার দলির বিকরণ কাপরকন উইসান মাস্টার নুরার দেনবড',
             'total_bets' => '১,৮০০+',
             'odds' => '2.10',
-            'bet_button_text' => 'এখনই বেট করুন →',
-            'bet_button_url' => '#',
+            'bet_button_text' => 'বিস্তারিত দেখুন',
             'image' => 'match-image.png'
         ),
         array(
@@ -2083,8 +2271,7 @@ function cricket_matches_insert_sample_data() {
             'prediction_text' => 'অস্ট্রেলিয়ার হোম সুবিধা এবং শক্তিশালী বোলিং আক্রমণ তাদের প্রিয় করে তুলেছে',
             'total_bets' => '৪,২০০+',
             'odds' => '1.65',
-            'bet_button_text' => 'এখনই বেট করুন →',
-            'bet_button_url' => '#',
+            'bet_button_text' => 'বিস্তারিত দেখুন',
             'image' => 'cricket-image.png'
         ),
         array(
@@ -2099,8 +2286,7 @@ function cricket_matches_insert_sample_data() {
             'prediction_text' => 'পাকিস্তান দেমে পূর্বর্তন। নামত আক্রমান ফর্মপাবনর দুবে ডিবল্লার নিংসার',
             'total_bets' => '২,৫০০+',
             'odds' => '1.95',
-            'bet_button_text' => 'এখনই বেট করুন →',
-            'bet_button_url' => '#',
+            'bet_button_text' => 'বিস্তারিত দেখুন',
             'image' => 'cricket-image.png'
         ),
         array(
@@ -2115,8 +2301,7 @@ function cricket_matches_insert_sample_data() {
             'prediction_text' => 'রাজস্থানের গান্ধি পরিবন্তন জাকাবুধু। পারবাগর মাস্তব পূর্বপ্রবল',
             'total_bets' => '৩,০০০+',
             'odds' => '1.90',
-            'bet_button_text' => 'এখনই বেট করুন →',
-            'bet_button_url' => '#',
+            'bet_button_text' => 'বিস্তারিত দেখুন',
             'image' => 'match-image.png'
         ),
         array(
@@ -2131,8 +2316,7 @@ function cricket_matches_insert_sample_data() {
             'prediction_text' => 'মুম্বাইয়ের অভিজ্ঞ দল এবং শক্তিশালী ব্যাটিং লাইনআপ তাদের সুবিধা দেয়',
             'total_bets' => '২,৮০০+',
             'odds' => '1.75',
-            'bet_button_text' => 'এখনই বেট করুন →',
-            'bet_button_url' => '#',
+            'bet_button_text' => 'বিস্তারিত দেখুন',
             'image' => 'cricket-image.png'
         ),
     );
@@ -2140,7 +2324,7 @@ function cricket_matches_insert_sample_data() {
     foreach ($sample_matches as $match_data) {
         // Create post
         $post_id = wp_insert_post(array(
-            'post_type' => 'cricket_match',
+            'post_type' => 'match_prediction',
             'post_title' => $match_data['title'],
             'post_status' => 'publish',
             'post_author' => 1,
@@ -2159,7 +2343,6 @@ function cricket_matches_insert_sample_data() {
             update_post_meta($post_id, '_cricket_total_bets', $match_data['total_bets']);
             update_post_meta($post_id, '_cricket_odds', $match_data['odds']);
             update_post_meta($post_id, '_cricket_bet_button_text', $match_data['bet_button_text']);
-            update_post_meta($post_id, '_cricket_bet_button_url', $match_data['bet_button_url']);
 
             // Note: Featured images would need to be set manually or uploaded programmatically
         }
@@ -2237,15 +2420,14 @@ function cricket_matches_add_random_posts() {
             'prediction_text' => $prediction,
             'total_bets' => number_format($total_bets, 0, '.', ',') . '+',
             'odds' => $odds,
-            'bet_button_text' => 'এখনই বেট করুন →',
-            'bet_button_url' => '#',
+            'bet_button_text' => 'বিস্তারিত দেখুন',
         );
     }
 
     // Insert posts
     foreach ($random_posts as $match_data) {
         $post_id = wp_insert_post(array(
-            'post_type' => 'cricket_match',
+            'post_type' => 'match_prediction',
             'post_title' => $match_data['title'],
             'post_status' => 'publish',
             'post_author' => 1,
@@ -2263,7 +2445,6 @@ function cricket_matches_add_random_posts() {
             update_post_meta($post_id, '_cricket_total_bets', $match_data['total_bets']);
             update_post_meta($post_id, '_cricket_odds', $match_data['odds']);
             update_post_meta($post_id, '_cricket_bet_button_text', $match_data['bet_button_text']);
-            update_post_meta($post_id, '_cricket_bet_button_url', $match_data['bet_button_url']);
         }
     }
 
@@ -2337,8 +2518,7 @@ function cricket_posts_add_random_posts() {
             'prediction_text' => $prediction,
             'total_bets' => number_format($total_bets, 0, '.', ',') . '+',
             'odds' => $odds,
-            'bet_button_text' => 'এখনই বেট করুন →',
-            'bet_button_url' => '#',
+            'bet_button_text' => 'বিস্তারিত দেখুন',
         );
     }
 
@@ -2364,7 +2544,6 @@ function cricket_posts_add_random_posts() {
             update_post_meta($post_id, '_cricket_post_total_bets', $match_data['total_bets']);
             update_post_meta($post_id, '_cricket_post_odds', $match_data['odds']);
             update_post_meta($post_id, '_cricket_post_bet_button_text', $match_data['bet_button_text']);
-            update_post_meta($post_id, '_cricket_post_bet_button_url', $match_data['bet_button_url']);
         }
     }
 
@@ -2578,7 +2757,7 @@ function cricket_matches_render_shortcode_list_page() {
                     <button class="copy-shortcode-btn" onclick="copyCricketShortcode(this, '[cricket_matches]')">Copy</button>
                 </div>
                 <p class="shortcode-description">
-                    <strong>Post Type:</strong> <code>cricket_match</code><br>
+                    <strong>Post Type:</strong> <code>match_prediction</code><br>
                     Displays cricket matches from the "Cricket Match" custom post type in a responsive grid layout. Shows all match details including teams, time, predictions, odds, and betting buttons.
                 </p>
                 <div class="shortcode-params">
@@ -2613,7 +2792,7 @@ function cricket_matches_render_shortcode_list_page() {
                     <button class="copy-shortcode-btn" onclick="copyCricketShortcode(this, '[cricket_matches_paged]')">Copy</button>
                 </div>
                 <p class="shortcode-description">
-                    <strong>Post Type:</strong> <code>cricket_match</code><br>
+                    <strong>Post Type:</strong> <code>match_prediction</code><br>
                     Displays cricket matches with pagination support and column control. Perfect for archive pages with many matches. Includes Bengali pagination with professional design.
                 </p>
                 <div class="shortcode-params">
@@ -2649,7 +2828,7 @@ function cricket_matches_render_shortcode_list_page() {
                     <button class="copy-shortcode-btn" onclick="copyCricketShortcode(this, '[cricket_matches_list]')">Copy</button>
                 </div>
                 <p class="shortcode-description">
-                    <strong>Post Type:</strong> <code>cricket_match</code><br>
+                    <strong>Post Type:</strong> <code>match_prediction</code><br>
                     Displays cricket matches in a list/blog layout with "Load More" AJAX button. Includes excerpt, author info, Bengali date, and placeholder images. Automatically loads more posts without page reload.
                 </p>
                 <div class="shortcode-params">
