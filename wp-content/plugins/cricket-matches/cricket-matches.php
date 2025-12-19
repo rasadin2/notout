@@ -993,7 +993,7 @@ function cricket_posts_shortcode($atts) {
                                 <?php echo esc_html($post_date); ?>
                             </div>
                             <h3 class="card-title"><?php echo get_the_title(); ?></h3>
-                            <p class="card-excerpt"><?php echo esc_html($excerpt); ?></p>
+                            <!-- <p class="card-excerpt"><?php echo esc_html($excerpt); ?></p> -->
                             <a href="<?php echo esc_url(get_permalink()); ?>" class="read-more">
                                 বিস্তারিত পড়ুন
                                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1070,13 +1070,20 @@ function blog_listing_shortcode($atts) {
                 ?>
 <div class="card">
             <div class="card-image">
-               <a href="#"> <img src="/notout/wp-content/uploads/2025/12/detail-img-1.png" alt="Football"></a>
-                <span class="category-badge">ফুটবল</span>
+               <a href="<?php the_permalink(); ?>">
+                   <?php if ($thumbnail_url) : ?>
+                       <img src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title_attribute(); ?>">
+                   <?php else : ?>
+                       <img src="<?php echo plugin_dir_url(__FILE__); ?>images/placeholder.png" alt="<?php the_title_attribute(); ?>">
+                   <?php endif; ?>
+               </a>
+                <span class="category-badge"><?php echo $category_name; ?></span>
             </div>
             <div class="card-content">
-                <h2 class="card-title">প্রিমিয়ার লিগ: ম্যানচেস্টার ভার্সি পূর্বরূ
-                 </h2>
-				 <div class="des-tex"><p>আগামীকালের বড় ম্যাচের জন্য প্রস্তুত হন। বিশেষজ্ঞদের বিশ্লেষণ এবং বেটিং টিপস সহ সম্পূর্ণ প্রিভিউ.</p></div>
+                <h2 class="card-title">
+                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                </h2>
+				 <!-- <div class="des-tex"><p><?php echo esc_html($excerpt); ?></p></div> -->
                 <div class="card-meta">
                     <div class="meta-item">
                         <svg class="meta-icon icon-calendar" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1085,14 +1092,14 @@ function blog_listing_shortcode($atts) {
                             <line x1="8" y1="2" x2="8" y2="6"/>
                             <line x1="3" y1="10" x2="21" y2="10"/>
                         </svg>
-                        <span>৬ ডিসেম্বর, ২০২৪</span>
+                        <span><?php echo esc_html($post_date); ?></span>
                     </div>
                     <div class="meta-item">
                         <svg class="meta-icon icon-clock" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <circle cx="12" cy="12" r="10"/>
                             <polyline points="12 6 12 12 16 14"/>
                         </svg>
-                        <span>৪ মিনিট</span>
+                        <span><?php echo esc_html($reading_time_bangla); ?> মিনিট</span>
                     </div>
                 </div>
             </div>

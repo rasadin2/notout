@@ -91,6 +91,10 @@
 .foo-colume-4 {
     padding-left: 0;
 }
+.share-content {
+    max-width: 347px;
+    width: 100%;
+}
 }
 /*Tab Portrait*/
 @media only screen and (max-width:768px) {
@@ -296,6 +300,25 @@
 }
 .foo-colume-4 div:nth-child(2) p:before {
     top: 3px;
+}
+.blog-content-box p {
+    font-size: 16px;
+    line-height: 30px;
+    color: #007A55 !important;
+}
+.detail-name-box .elementor-heading-title span {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto;
+}
+.circket-table-container{
+	overflow-x:auto !important;
+}
+.cricket-table-box{
+	width:750px !important;
+}
+.top-list-time{
+	display:none !important;
 }
 }
 /*Mobile View Small*/
