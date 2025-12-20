@@ -317,8 +317,23 @@
 .cricket-table-box{
 	width:750px !important;
 }
-.top-list-time{
-	display:none !important;
+.welcome-popop-modal .title {
+	font-size: 21px;
+}
+.welcome-popop-modal .feature-title {
+    font-size: 12px;
+}
+.welcome-popop-modal .bonus-amount {
+    font-size: 46px;
+    font-weight: 500;
+}
+.welcome-popop-modal .header {
+    padding: 18px 20px 25px;
+}
+.welcome-popop-modal .crown-icon {
+    width: 68px;
+    height: 68px;
+    margin: 0 auto 20px;
 }
 }
 /*Mobile View Small*/

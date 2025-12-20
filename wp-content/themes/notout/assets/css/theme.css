@@ -1939,3 +1939,279 @@ section.error-404.not-found {
 .top-list-time{
 	display:none !important;
 }
+
+/*popup modal start*/
+        .welcome-popop-modal .container {
+            max-width: 512px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+			padding:0;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+			position:relative;
+        }
+ .welcome-popop-modal .container:after {
+			content:'';
+			width:100%;
+			height:12px;
+			background: linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 50%, #F7FEE7 100%);
+			box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+			border-radius: 24px;
+			position:absolute;
+			bottom:0;
+			background: url(../img/bottom-border.png) no-repeat center;
+		}
+        .welcome-popop-modal .header {
+			background: url(../img/pop-up-header-bg.png) no-repeat center;
+            background-size: cover;  
+            padding: 30px 20px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .welcome-popop-modal .alert-banner {
+            background: linear-gradient(90deg, #E7000B 0%, #FB2C36 100%);
+			opacity: 0.71;
+			box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -4px rgba(0, 0, 0, 0.1);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            margin-bottom: 20px;
+			display: inline-block;
+			border-radius:50px;
+        }
+
+        .welcome-popop-modal .close-btn {
+                position: absolute;
+				top: 15px;
+				right: 15px;
+				background: #004F3B;
+				border: none;
+				color: white;
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				cursor: pointer;
+				font-size: 18px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				outline:0;
+        }
+
+        .welcome-popop-modal .crown-icon {
+            background: linear-gradient(135deg, #7CCF00 0%, #9AE600 100%);
+            box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 40px;
+        }
+
+        .welcome-popop-modal .title {
+            text-align: center;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .welcome-popop-modal .coin1 { top: 10px; left: 20px; }
+        .coin2 { top: 20px; right: 30px; }
+        .coin3 { bottom: 10px; left: 40px; }
+        .coin4 { bottom: 20px; right: 20px; }
+
+        .welcome-popop-modal .content {
+            padding: 40px 25px;
+			background: url(../img/offer-bg-gradient.png) no-repeat center;
+			background-position: top center;
+			position:relative;
+        }
+       
+        .welcome-popop-modal .bonus-label {
+            color: #059669;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+           
+        }
+
+        .welcome-popop-modal .bonus-amount {
+            text-align: center;
+			font-size: 60px;
+			font-weight: 500;
+			color: #5EA500;
+			margin-bottom: 5px;
+			background: linear-gradient(90deg, #5EA500 0%, #009966 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+        }
+   .welcome-popop-modal .plus-icon{
+	   font-size:36px;
+        }
+        .welcome-popop-modal .bonus-extra {
+            text-align: center;
+            font-size: 30px;
+            background: linear-gradient(90deg, #009966 0%, #5EA500 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+         
+        }
+
+        .welcome-popop-modal .bonus-subtitle {
+            text-align: center;
+            font-size: 24px;
+            color: #002C22;
+            margin-bottom: 10px;
+        }
+
+        .welcome-popop-modal .bonus-info {
+            text-align: center;
+            color: #059669;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .welcome-popop-modal .features {
+           background: linear-gradient(135deg, #ECFDF5 0%, #F7FEE7 100%);
+           border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .welcome-popop-modal .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 12px;
+           background: #FFFFFF;
+			box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px -1px rgba(0, 0, 0, 0.1);
+			border-radius: 14px;
+        }
+
+        .welcome-popop-modal .feature-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .welcome-popop-modal .feature-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #a3e635;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .welcome-popop-modal .feature-text {
+            flex: 1;
+        }
+
+        .welcome-popop-modal .feature-title {
+            font-weight: 400;
+            color: #002C22;
+            margin-bottom: 3px;
+			font-size:16px;
+        }
+
+        .welcome-popop-modal .feature-subtitle {
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        .welcome-popop-modal .checkmark {
+            color: #059669;
+            font-size: 24px;
+        }
+
+        .welcome-popop-modal .register-btn {
+            width: 100%;
+			background: #84cc16;
+			color: #002C22;
+			border: none;
+			padding: 18px;
+			border-radius: 12px;
+			font-size: 20px;
+			font-weight: 400;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 10px;
+			margin-bottom: 15px;
+			transition: background 0.3s;
+			outline:0;
+        }
+
+        .welcome-popop-modal .register-btn:hover {
+            background: #65a30d;
+        }
+
+        .welcome-popop-modal .later-btn {
+            width: 100%;
+            background: white;
+            color: #007A55;
+            border: 2px solid #d1fae5;
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 400;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+			outline:0;
+        }
+
+        .welcome-popop-modal .later-btn:hover {
+            background: #f0fdf4;
+        }
+
+        .welcome-popop-modal .terms {
+            text-align: center;
+            font-size: 12px;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        .welcome-popop-modal .terms a {
+            color: #059669;
+            text-decoration: none;
+        }
+		 .welcome-popop-modal .bonus-box {
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		 gap: 0 10px;
+     }
+	 .welcome-popop-modal{
+		/*position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-color:rgba(0, 0, 0, 0.60);
+		z-index: 99999;*/
+		padding:20px 20px;
+	 }
+/*popup modal end*/
