@@ -1077,6 +1077,7 @@ background: linear-gradient(to bottom,  #023821 0%,#016334 100%); /* W3C, IE10+,
             align-items: center;
             justify-content: center;
             gap: 8px;
+			text-decoration:none !important;
         }
 
         .cricket-container-match .bet-button:hover {
@@ -2251,4 +2252,7 @@ text-fill-color: transparent;
     color: #ffffff;
     transform: translateY(-2px);
     box-shadow: 0 0px 0px rgba(102, 126, 234, 0.2) !important;
+}
+.blog-detail-list .card-image a{
+	text-decoration:none !important;
 }
