@@ -1,0 +1,228 @@
+/**
+ * Welcome Popup Modal - Functional Styles Only
+ * Design styles should already exist
+ */
+
+/* Modal Hidden by Default - Right Bottom Corner Position */
+.welcome-popop-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    align-items: flex-end;      /* Bottom alignment */
+    justify-content: flex-end;  /* Right side */
+    padding: 20px;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Modal Visible State */
+.welcome-popop-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal Box Animation - Slide from Right - Floating with Fixed Height */
+.welcome-popop-modal .wel-offer-modal-box {
+    pointer-events: auto;
+    max-width: 420px;
+    width: 100%;
+    max-height: 70vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transform: translateX(100%) translateY(0);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.welcome-popop-modal.show .wel-offer-modal-box {
+    transform: translateX(0) translateY(0);
+}
+
+/* Custom Scrollbar Styling */
+.welcome-popop-modal .wel-offer-modal-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.welcome-popop-modal .wel-offer-modal-box::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+}
+
+.welcome-popop-modal .wel-offer-modal-box::-webkit-scrollbar-thumb {
+    background: rgba(0, 44, 34, 0.3);
+    border-radius: 4px;
+}
+
+.welcome-popop-modal .wel-offer-modal-box::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 44, 34, 0.5);
+}
+
+/* Firefox Scrollbar */
+.welcome-popop-modal .wel-offer-modal-box {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 44, 34, 0.3) rgba(0, 0, 0, 0.05);
+}
+
+/* Close Button Hover */
+.welcome-popop-modal .close-btn {
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.welcome-popop-modal .close-btn:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+/* Register Button */
+.welcome-popop-modal .register-btn {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.welcome-popop-modal .register-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Coin Animations */
+.welcome-popop-modal .coins {
+    animation: float 3s ease-in-out infinite;
+}
+
+.welcome-popop-modal .coin1 {
+    animation-delay: 0s;
+}
+
+.welcome-popop-modal .coin2 {
+    animation-delay: 0.5s;
+}
+
+.welcome-popop-modal .coin3 {
+    animation-delay: 1s;
+}
+
+.welcome-popop-modal .coin4 {
+    animation-delay: 1.5s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Trigger Icon - Blinking Button - Right Bottom Corner */
+.popup-trigger-icon {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #009966, #00CC88);
+    box-shadow: 0 4px 20px rgba(0, 153, 102, 0.4);
+    cursor: pointer;
+    z-index: 9998;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: pulseIcon 2s infinite;
+}
+
+.popup-trigger-icon.visible {
+    display: flex;
+}
+
+.popup-trigger-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(0, 153, 102, 0.6);
+}
+
+.popup-trigger-icon svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+/* Blinking Animation */
+@keyframes pulseIcon {
+    0%, 100% {
+        box-shadow: 0 4px 20px rgba(0, 153, 102, 0.4);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 4px 30px rgba(0, 153, 102, 0.8), 0 0 0 10px rgba(0, 153, 102, 0.2);
+        transform: scale(1.05);
+    }
+}
+
+/* Hide trigger when modal is open */
+.welcome-popop-modal.show ~ .popup-trigger-icon {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .welcome-popop-modal {
+        padding: 10px;
+        align-items: flex-end;
+    }
+
+    .welcome-popop-modal .wel-offer-modal-box {
+        max-width: 100%;
+        max-height: 65vh;
+    }
+
+    .popup-trigger-icon {
+        width: 50px;
+        height: 50px;
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .popup-trigger-icon svg {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-popop-modal {
+        padding: 5px;
+        align-items: flex-end;
+    }
+
+    .welcome-popop-modal .wel-offer-modal-box {
+        max-width: 100%;
+        max-height: 60vh;
+    }
+
+    /* Slightly wider scrollbar on mobile for easier use */
+    .welcome-popop-modal .wel-offer-modal-box::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    .popup-trigger-icon {
+        width: 45px;
+        height: 45px;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .popup-trigger-icon svg {
+        width: 22px;
+        height: 22px;
+    }
+}

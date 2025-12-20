@@ -315,3 +315,9 @@ function notout_theme_options() {
 		'notout_header_type' => 'default', // Options: default, large, minimal, none
 	);
 }
+
+/**
+ * Welcome Popup Modal
+ */
+require get_template_directory() . '/inc/welcome-popup.php';
+require get_template_directory() . '/inc/welcome-popup-admin.php';
