@@ -335,6 +335,12 @@
     height: 68px;
     margin: 0 auto 20px;
 }
+.platfrom-icon-box .elementor-image-box-wrapper {
+    min-height: auto;
+}
+.cricket-container-match .matches-grid {
+    margin-bottom: 0;
+}
 }
 /*Mobile View Small*/
 @media only screen and (max-width:360px) {
