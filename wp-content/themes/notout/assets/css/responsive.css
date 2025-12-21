@@ -318,13 +318,13 @@
 	width:750px !important;
 }
 .welcome-popop-modal .title {
-	font-size: 21px;
+    font-size: 18px;
 }
 .welcome-popop-modal .feature-title {
     font-size: 12px;
 }
 .welcome-popop-modal .bonus-amount {
-    font-size: 46px;
+    font-size: 40px;
     font-weight: 500;
 }
 .welcome-popop-modal .header {
@@ -338,15 +338,52 @@
 .platfrom-icon-box .elementor-image-box-wrapper {
     min-height: auto;
 }
+
+.percent-image-box img {
+    margin-right: -20px;
+}
+.welcome-popop-modal {
+    padding: 5px 15px !important;
+}
+.welcome-popop-modal .register-btn {
+    border-radius: 12px;
+    font-size: 16px;
+	text-decoration:none !important;
+}
+  .notout-main-menu li a {
+    padding: 14px 13px;
+    font-size: 15px;
+  }
+p {
+  margin: 0 0 15px 0;
+  font-size: 16px;
+  line-height: 28px;
+}
+}
+@media only screen and (max-width:414px) {
 .cricket-container-match .matches-grid {
-    margin-bottom: 0;
+    margin-bottom: 80px;
+}
+}
+@media only screen and (max-width:390px) {
+.cricket-container-match .matches-grid {
+    margin-bottom:0px;
 }
 }
 /*Mobile View Small*/
-@media only screen and (max-width:360px) {
-
+@media only screen and (max-width:375px) {
+.cricket-container-match .matches-grid {
+    margin-bottom: 0px;
+}
 }
 /*Mobile Tiny Small*/
 @media only screen and (max-width:320px) {
-
+.welcome-popop-modal .register-btn {
+    border-radius: 12px;
+    font-size: 13px;
+    text-decoration: none !important;
+}
+.welcome-popop-modal .features {
+    padding: 15px;
+}
 }

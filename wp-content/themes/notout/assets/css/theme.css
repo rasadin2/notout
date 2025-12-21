@@ -2256,3 +2256,13 @@ text-fill-color: transparent;
 .blog-detail-list .card-image a{
 	text-decoration:none !important;
 }
+.cricket-container-match {
+    width: 100%;
+    padding: 0px 0;
+}
+.share-box-container{
+	display:none !important;
+}
+.welcome-popop-modal .register-btn{
+	text-decoration:none !important;
+}
