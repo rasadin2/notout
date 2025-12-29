@@ -15,7 +15,8 @@
       "Bash(php migrate-post-type.php:*)",
       "Bash(php -r:*)",
       "Bash(php verify-migration.php:*)",
-      "Bash(php:*)"
+      "Bash(php:*)",
+      "mcp__playwright__browser_navigate"
     ],
     "deny": [],
     "ask": []
