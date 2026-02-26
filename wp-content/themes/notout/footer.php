@@ -29,13 +29,13 @@
 		</div>
 		<div class="container second-bottom">
 			<div class="row">
-				<div class="col-md-3 col-sm-6 foo-colume-1">
+				<div class="col-md-4 col-sm-6 foo-colume-1">
 					<?php dynamic_sidebar( 'footer-widget-1' ); ?>
 				</div>
-				<div class="col-md-3 col-sm-6 foo-colume-2">
+				<div class="col-md-4 col-sm-6 foo-colume-2">
 					<?php dynamic_sidebar( 'footer-widget-2' ); ?>
 				</div>
-				<div class="col-md-3 col-sm-6 foo-colume-3">
+				<div class="col-md-4 col-sm-6 foo-colume-3">
 					<?php dynamic_sidebar( 'footer-widget-3' ); ?>
 				</div>
 				<div class="col-md-3 col-sm-6 foo-colume-4">

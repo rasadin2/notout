@@ -98,6 +98,9 @@
 }
 /*Tab Portrait*/
 @media only screen and (max-width:768px) {
+ .search-box {
+   display:none;
+}
 .header-top-bar {
     padding: 10px 30px;
     display: none;
