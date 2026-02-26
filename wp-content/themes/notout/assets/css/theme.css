@@ -2387,3 +2387,6 @@ text-fill-color: transparent;
 border-bottom:1px solid #FFA726;
 padding-bottom:10px;
 }
+.foo-colume-1 p {
+    max-width: 452px;
+}
