@@ -208,7 +208,7 @@ and (max-width: 1080px) {
         display: none;
         width: 100%;
         padding: 0 15px;
-        background: #1c2d19;
+        background:#112b23;
 		position: absolute;
         top: 85px;
 		padding: 0 0;
@@ -228,10 +228,10 @@ and (max-width: 1080px) {
         position: absolute;
         width: 40px;
         height: 40px;
-        color: #333;
+        color: #ffffff;
         text-align: center;
         line-height: 2.5;
-        top: 2px;
+        top: 6px;
         right: 0px;
     }
     .notout-main-menu li ul {
@@ -249,20 +249,21 @@ and (max-width: 1080px) {
         width: 100%;
         position: relative;
         top: 0;
-        background-color: #fff;
-        padding: 0px 0px 0px 10px;
+        background:#112b23;
+        padding: 0px 0px 0px 0px;
+		border-radius:0;
     }
     .notout-main-menu > li ul.sub-menu > li {
-        border-bottom: 1px solid rgba(0,0,0,0.05);
+        border-bottom: 1px solid rgb(22 35 19);
     }
     .notout-main-menu > li ul.sub-menu li:first-child {
-        border-top: 1px solid rgba(0,0,0,0.05);
+        border-top: 1px solid rgb(22 35 19);
     }
     .notout-main-menu > li ul.sub-menu > li:last-child {
         border: 0;
     }
     .notout-main-menu > li ul.sub-menu > li:only-child {
-        border-top: 1px solid rgba(0,0,0,0.05);
+        border-top: 1px solid rgb(22 35 19));
     }
     .notout-main-menu li > .sub-menu li ul.sub-menu {
         position: relative;
@@ -270,13 +271,14 @@ and (max-width: 1080px) {
         left: 0;
         width: 100%;
         background-color: #fff;
-        padding: 0px 0px 0px 10px;
+        padding: 0px 0px 0px 0px;
     }
     .notout-main-menu .menu-item-has-children {
         padding-right: 0;
     }
     .notout-main-menu li > .sub-menu li a {
-        padding: 10px 0px;
+        padding: 14px 30px;
+        color: #fff;
     }
 
     .notout-navbar-toggler::after {
