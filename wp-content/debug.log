@@ -4001,3 +4001,61 @@
 [26-Feb-2026 10:50:58 UTC]   Automatic plugin updates starting...
 [26-Feb-2026 10:50:58 UTC]   Automatic plugin updates complete.
 [26-Feb-2026 10:51:00 UTC] Automatic updates complete.
+[26-Feb-2026 16:51:58 UTC] PHP Warning:  Undefined variable $defaults in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:51:58 UTC] PHP Warning:  Undefined variable $defaults in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:51:58 UTC] PHP Warning:  Trying to access array offset on value of type null in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:51:58 UTC] PHP Warning:  Trying to access array offset on value of type null in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:52:26 UTC] PHP Warning:  Undefined variable $defaults in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:52:26 UTC] PHP Warning:  Trying to access array offset on value of type null in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:52:26 UTC] PHP Warning:  Undefined variable $defaults in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:52:26 UTC] PHP Warning:  Trying to access array offset on value of type null in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:52:26 UTC] PHP Warning:  Undefined variable $defaults in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:52:26 UTC] PHP Warning:  Trying to access array offset on value of type null in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:52:27 UTC] PHP Warning:  Undefined variable $defaults in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:52:27 UTC] PHP Warning:  Trying to access array offset on value of type null in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:52:28 UTC] PHP Warning:  Undefined variable $defaults in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:52:28 UTC] PHP Warning:  Trying to access array offset on value of type null in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:52:29 UTC] PHP Warning:  Undefined variable $defaults in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:52:29 UTC] PHP Warning:  Trying to access array offset on value of type null in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:52:30 UTC] PHP Warning:  Undefined variable $defaults in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:52:30 UTC] PHP Warning:  Trying to access array offset on value of type null in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:52:31 UTC] PHP Warning:  Undefined variable $defaults in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:52:31 UTC] PHP Warning:  Trying to access array offset on value of type null in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:52:41 UTC] PHP Warning:  Undefined variable $defaults in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:52:41 UTC] PHP Warning:  Trying to access array offset on value of type null in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:52:49 UTC] PHP Warning:  Undefined variable $defaults in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:52:49 UTC] PHP Warning:  Trying to access array offset on value of type null in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:52:49 UTC] PHP Warning:  Undefined variable $defaults in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:52:49 UTC] PHP Warning:  Trying to access array offset on value of type null in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:52:49 UTC] PHP Warning:  Undefined variable $defaults in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:52:49 UTC] PHP Warning:  Trying to access array offset on value of type null in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:55:07 UTC] PHP Warning:  Undefined variable $defaults in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:55:07 UTC] PHP Warning:  Trying to access array offset on value of type null in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:55:10 UTC] PHP Warning:  Undefined variable $defaults in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:55:10 UTC] PHP Warning:  Trying to access array offset on value of type null in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:55:11 UTC] PHP Warning:  Undefined variable $defaults in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:55:11 UTC] PHP Warning:  Trying to access array offset on value of type null in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:55:11 UTC] PHP Warning:  Undefined variable $defaults in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:55:11 UTC] PHP Warning:  Trying to access array offset on value of type null in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:55:25 UTC] PHP Warning:  Undefined variable $defaults in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:55:25 UTC] PHP Warning:  Trying to access array offset on value of type null in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:55:36 UTC] PHP Warning:  Undefined variable $defaults in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:55:36 UTC] PHP Warning:  Trying to access array offset on value of type null in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:55:37 UTC] PHP Warning:  Undefined variable $defaults in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:55:37 UTC] PHP Warning:  Trying to access array offset on value of type null in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:55:37 UTC] PHP Warning:  Undefined variable $defaults in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:55:37 UTC] PHP Warning:  Trying to access array offset on value of type null in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:56:10 UTC] PHP Warning:  Undefined variable $defaults in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:56:10 UTC] PHP Warning:  Trying to access array offset on value of type null in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:56:10 UTC] PHP Warning:  Undefined variable $defaults in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:56:10 UTC] PHP Warning:  Trying to access array offset on value of type null in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:56:10 UTC] PHP Warning:  Undefined variable $defaults in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:56:10 UTC] PHP Warning:  Trying to access array offset on value of type null in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:58:17 UTC] PHP Warning:  Undefined variable $defaults in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:58:17 UTC] PHP Warning:  Trying to access array offset on value of type null in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:58:25 UTC] PHP Warning:  Undefined variable $defaults in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:58:25 UTC] PHP Warning:  Trying to access array offset on value of type null in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:58:25 UTC] PHP Warning:  Undefined variable $defaults in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:58:25 UTC] PHP Warning:  Trying to access array offset on value of type null in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:58:25 UTC] PHP Warning:  Undefined variable $defaults in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183
+[26-Feb-2026 16:58:25 UTC] PHP Warning:  Trying to access array offset on value of type null in E:\xampp\htdocs\notout\wp-content\themes\notout\inc\welcome-popup.php on line 183

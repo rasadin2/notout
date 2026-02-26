@@ -22,7 +22,7 @@ header .container {
     min-height:100px;
     background: #014629;
 	background: transparent;
-	box-shadow: 0px 1px 2px 0px rgb(0 0 0 / 0.2);
+	box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 0.2);
 }
 .notout-menu-wrap {
     width: 100%;
@@ -208,14 +208,14 @@ and (max-width: 1080px) {
         display: none;
         width: 100%;
         padding: 0 15px;
-        background:#015A30;
+        background: #1c2d19;
 		position: absolute;
         top: 85px;
 		padding: 0 0;
     }
     .notout-main-menu > li {
         display: block;
-        border-bottom:1px solid rgb(12 108 63);
+       border-bottom: 1px solid rgb(22 35 19);
     }
     .notout-main-menu li a {
         padding: 10px 20px;
@@ -792,10 +792,9 @@ background: linear-gradient(to bottom,  #023821 0%,#016334 100%); /* W3C, IE10+,
     align-items: center;
     padding: 20px;
 }
-.header-bg-box{
-	background: url(../img/header-bg.png) no-repeat center;
-	background-size:cover;
-
+.header-bg-box {
+    background: #0c1e1b;
+    /* background-size: cover; */
 }
 .header-top-bar .header-content-box {
     display: flex;
